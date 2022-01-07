@@ -8,7 +8,25 @@
     <link rel="stylesheet" href="css/age.css">
 </head>
 <body>
+    <!-- button click할때 마다 calc()가 호출된다. -->
     <button class="btn" onclick="calc();">age 계산</button>
     <div class="show" id="result">(결과값 표시)</div>
+    <script>
+        // function calc() 선언과 구현을 해주고 있다.
+        function calc() {
+            let currentYear = 2022; // 올해 년도를 currentYear variable에 저장
+            let birthYear = prompt('태어난 년도를 입력하세요.', 'YYYY');
+            // client로부터 입력을 받은 값으로 variable birthYear에 저장
+            let age = 0; // variable initial value zero
+
+            // 실제 나이를 구하기 위한 코드
+            age = currentYear - birthYear + 1;
+            
+            // document 현재 웹브라우저의 페이지를 의미 querySelector()는
+            // id가 result인 웹 div를 의미한다. innerHTML은 대입한 값으로
+            // html문서에 대체한다
+            document.querySelector('#result').innerHTML=  '당신의 나이는 ' + age + '살 입니다.';
+        };
+    </script>
 </body>
 </html>
